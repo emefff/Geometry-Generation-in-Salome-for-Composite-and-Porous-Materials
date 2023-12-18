@@ -17,7 +17,7 @@ For a composite like shown above it is important to partition the box with the p
 
 When doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 1.1M nodes and uses 3.4M DOFs, although it is still quite coarse in some regions! Such a simulation can quickly get out of hand memory-wise if the mesh gets larger (here >150GB in memory were needed). Now what is this good for? With such models we can study the influence of particles/pores on our bulk/matrix material. For a much more complex real part we would for example, calculate a change in elastic modulus in this model and use the derived modulus for a simulation of the real part. As you can imagine, there are many more possibilities (thermal conductivity, maximum allowable stresses to stay below delamination ... etc.).
 
-For this simple demonstration we only apply a step-wise displacement on one of the surfaces. From solid mechanics we know that edgy particles lead to very high maximum stresses (if in tension, delamination may occur), this can easily be followed by looking at Von Mises stresses:
+For this simple demonstration we only apply a step-wise displacement in -x on the surface on the right-hand side. From solid mechanics we know that edgy particles lead to very high maximum stresses (if in tension, delamination may occur), this can easily be followed by looking at Von Mises stresses:
 
 ![VMIS_1](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/28f9ac2d-8cfa-489a-8ad2-60c1dba78156)
 
