@@ -12,9 +12,10 @@ Subtracting these from the box gets us the matrix for our particle reinforced co
 
 For a composite like shown above it is important to partition the box with the particles to get one single body with several volumes (here: 201 volumes, one for the matrix, remaining volumes are particles). Code_aster has a lot of difficulty using LIAISON_MAIL on these meshes, thus we need one body for meshing the whole thing in one go. This will ensure that the particles (their meshes that is) are connected to the matrix. There will be no delaminations etc.:
 
-![Bildschirmfoto vom 2023-12-18 13-04-45](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/16addaec-65da-4820-96af-630c2c42bd0d)
+![Bildschirmfoto vom 2023-12-18 13-11-37](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/f10943bb-9b3d-4936-8972-954c42378360)
 
-When doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 1.1M nodes! Such a simulation can quickly get out of hand memory-wise if the mesh gets larger (here we needed >100GB in memory).
+
+When doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 1.1M nodes and uses 3.4M DOFs, although it is still quite coarse in some regions! Such a simulation can quickly get out of hand memory-wise if the mesh gets larger (here we needed >100GB in memory). 
 For this simple demonstration we only apply a step-wise displacement on one of the surfaces. From theoretical mechanics we know that edgy particles lead to very high maximum stresses, this can easily be followed by looking at Von Mises stresses:
 
 
