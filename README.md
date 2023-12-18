@@ -14,4 +14,5 @@ By defining some groups we can continue to meshing the two bodies in separate me
 
 ![Bildschirmfoto vom 2023-12-18 10-09-40](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/d36f93f5-2826-4201-8878-6f3602cafe77)
 
-
+In doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 2.47 million nodes! Such a simulation can quickly get out of hand memory-wise.
+For this simple demonstration we only apply a step-wise displacement on one of the surfaces. 
