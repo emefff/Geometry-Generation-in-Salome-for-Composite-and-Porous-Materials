@@ -9,3 +9,9 @@ Salome is based on Python and offers to load and dump scripts. A first peek into
 Subtracting these from the box gets us the matrix for our particle reinforced composite body, together they look like this:
 
 ![Bildschirmfoto vom 2023-12-18 10-04-19](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/4d8662a6-54ff-437e-ac54-f9ab5e00bf15)
+
+By defining some groups we can continue to meshing the two bodies in separate meshes. In each body (particles and matrix) we also defined the inner surfaces for consistent meshing, that is we want to define equally sized elements inside the resulting body (meshed with netgen):
+
+![Bildschirmfoto vom 2023-12-18 10-09-40](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/d36f93f5-2826-4201-8878-6f3602cafe77)
+
+
