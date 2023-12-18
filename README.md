@@ -10,9 +10,9 @@ Subtracting these from the box gets us the matrix for our particle reinforced co
 
 ![Bildschirmfoto vom 2023-12-18 10-04-19](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/4d8662a6-54ff-437e-ac54-f9ab5e00bf15)
 
-By defining some groups we can continue to meshing the two bodies in separate meshes. In each body (particles and matrix) we also defined the inner surfaces for consistent meshing, that is we want to define equally sized elements inside the resulting body (meshed with netgen):
+For a composite like show above it is important to partition the box with the particles to get one single body with several volumes (here: 201 volumes, one for the matrix, remaining volumes are particles). Code_aster has a lot of difficulty using LIAISON_MAIL, thus we need one body for meshing the whole thin in one go. This will ensure, that the particles (their meshes that is) are connected to the matrix. There will be no delaminations etc.:
 
-![Bildschirmfoto vom 2023-12-18 10-09-40](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/d36f93f5-2826-4201-8878-6f3602cafe77)
+![Bildschirmfoto vom 2023-12-18 12-22-10](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/14b81f6b-b804-4caa-8ef2-3079a021b92b)
 
-In doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 2.47 million nodes! Such a simulation can quickly get out of hand memory-wise.
+When doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 963k nodes! Such a simulation can quickly get out of hand memory-wise if the mesh gets larger.
 For this simple demonstration we only apply a step-wise displacement on one of the surfaces. 
