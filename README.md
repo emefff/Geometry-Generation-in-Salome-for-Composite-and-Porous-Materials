@@ -14,5 +14,5 @@ For a composite like show above it is important to partition the box with the pa
 
 ![Bildschirmfoto vom 2023-12-18 12-22-10](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/14b81f6b-b804-4caa-8ef2-3079a021b92b)
 
-When doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 963k nodes! Such a simulation can quickly get out of hand memory-wise if the mesh gets larger.
+When doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 963k nodes! Such a simulation can quickly get out of hand memory-wise if the mesh gets larger (here we needed ~100GB in memory).
 For this simple demonstration we only apply a step-wise displacement on one of the surfaces. 
