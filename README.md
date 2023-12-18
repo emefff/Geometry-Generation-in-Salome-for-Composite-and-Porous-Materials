@@ -15,7 +15,8 @@ For a composite like shown above it is important to partition the box with the p
 ![Bildschirmfoto vom 2023-12-18 13-11-37](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/f10943bb-9b3d-4936-8972-954c42378360)
 
 
-When doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 1.1M nodes and uses 3.4M DOFs, although it is still quite coarse in some regions! Such a simulation can quickly get out of hand memory-wise if the mesh gets larger (here we needed >100GB in memory). 
+When doing this we really have to watch the mesh size. Remember, we only have 200 particles, but the corresponding mesh consists of 1.1M nodes and uses 3.4M DOFs, although it is still quite coarse in some regions! Such a simulation can quickly get out of hand memory-wise if the mesh gets larger (here we needed >100GB in memory). Now what is this good for? With such models we can study the influence of particles/pores on our bulk/matrix material. For a much more complex real part we would for example, calculate a change in elastic modulus in this model and use the derived modulus for a simulation of the real part. As you can imagine, there are manymore possibilities (thermal conductivity, maximum allowable stresses to stay below delamination ... etc.).
+
 For this simple demonstration we only apply a step-wise displacement on one of the surfaces. From theoretical mechanics we know that edgy particles lead to very high maximum stresses, this can easily be followed by looking at Von Mises stresses:
 
 
