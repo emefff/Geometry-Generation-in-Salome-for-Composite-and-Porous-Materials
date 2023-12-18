@@ -19,8 +19,6 @@ When doing this we really have to watch the mesh size. Remember, we only have 20
 
 For this simple demonstration we only apply a step-wise displacement on one of the surfaces. From solid mechanics we know that edgy particles lead to very high maximum stresses (if in tension, delamination may occur), this can easily be followed by looking at Von Mises stresses:
 
-
-
-
+![VMIS_1](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/28f9ac2d-8cfa-489a-8ad2-60c1dba78156)
 
 emefff@gmx.at
