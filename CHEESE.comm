@@ -1,0 +1,75 @@
+DEBUT()
+
+mesh = LIRE_MAILLAGE(FORMAT='MED',
+                     UNITE=20)
+
+model = AFFE_MODELE(AFFE=_F(MODELISATION='3D',
+                            PHENOMENE='MECANIQUE',
+                            TOUT='OUI'),
+                    DISTRIBUTION=_F(METHODE='SOUS_DOMAINE',
+                                    PARTITIONNEUR='METIS'),
+                    MAILLAGE=mesh)
+
+#comment: SiC = DEFI_MATERIAU(ELAS=_F(E=400000.0,
+#comment:                             NU=0.3))
+
+aluminium = DEFI_MATERIAU(ELAS=_F(E=73000.0,
+                                  NU=0.3))
+
+fieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(aluminium, ),
+                                 TOUT='OUI'),
+                         MODELE=model)
+
+func = DEFI_FONCTION(INTERPOL=('LIN', ),
+                     NOM_PARA='INST',
+                     NOM_RESU='TOUTRESU',
+                     PROL_DROITE='CONSTANT',
+                     PROL_GAUCHE='CONSTANT',
+                     VALE=(0.0, 0.0, 1.0, 1.0, 2.0, 2.0, 3.0, 3.0, 4.0, 4.0, 5.0, 5.0))
+
+listr = DEFI_LIST_REEL(DEBUT=0.0,
+                       INTERVALLE=_F(JUSQU_A=5.0,
+                                     NOMBRE=5))
+
+times = DEFI_LIST_INST(DEFI_LIST=_F(LIST_INST=listr),
+                       METHODE='AUTO')
+
+FIX = AFFE_CHAR_MECA(DDL_IMPO=_F(DX=0.0,
+                                 DY=0.0,
+                                 DZ=0.0,
+                                 GROUP_MA=('fix', )),
+                     MODELE=model)
+
+DEPL = AFFE_CHAR_MECA(DDL_IMPO=_F(DX=-1.0,
+                                  GROUP_MA=('force', )),
+                      MODELE=model)
+
+resnonl = STAT_NON_LINE(CHAM_MATER=fieldmat,
+                        COMPORTEMENT=_F(DEFORMATION='PETIT',
+                                        RELATION='ELAS',
+                                        TOUT='OUI'),
+                        CONVERGENCE=_F(ITER_GLOB_MAXI=100,
+                                       RESI_GLOB_RELA=1e-06),
+                        EXCIT=(_F(CHARGE=FIX),
+                               _F(CHARGE=DEPL,
+                                  FONC_MULT=func)),
+                        INCREMENT=_F(INST_FIN=5.0,
+                                     LIST_INST=times),
+                        METHODE='NEWTON',
+                        MODELE=model,
+                        NEWTON=_F(MATRICE='TANGENTE',
+                                  PREDICTION='ELASTIQUE',
+                                  REAC_INCR=1,
+                                  REAC_ITER=1),
+                        SOLVEUR=_F(METHODE='MUMPS',
+                                   RENUM='AUTO'))
+
+resnonl = CALC_CHAMP(reuse=resnonl,
+                     CRITERES=('SIEQ_NOEU', ),
+                     RESULTAT=resnonl)
+
+IMPR_RESU(FORMAT='MED',
+          RESU=_F(RESULTAT=resnonl),
+          UNITE=2)
+
+FIN()
