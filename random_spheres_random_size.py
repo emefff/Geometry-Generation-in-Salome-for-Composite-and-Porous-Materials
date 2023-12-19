@@ -76,9 +76,6 @@ for i in range(num_spheres):
     var = geompy.MakeTranslation(sphere, float(spheres_dict[key_str][0]), float(spheres_dict[key_str][1]), float(spheres_dict[key_str][2]) )
     geompy.addToStudy(var, key_str)
 
-# FUSING 20 OBJECTS ALREADY TAKES A LONG TIME...
-# always unselect 'Detect..' and 'Remove...'
-
 print(50*"*")
 #print(spheres_dict)
 
