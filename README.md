@@ -35,6 +35,10 @@ Again, we mesh it with netgen. Above said also holds: the mesh size can easily g
 
 ![Bildschirmfoto vom 2023-12-19 09-03-59](https://github.com/emefff/Mesh-Generation-in-Salome-for-Composite-and-Porous-Materials/assets/89903493/fe54cf62-d970-4be6-a0db-594550ccd9f0)
 
+The load case is the same for this geometry, we look at the Von Mises stresses of the structure. With applied displacements we find some of the walls severly deformed:
 
+![VMIS_DEPLx1](https://github.com/emefff/Mesh-Generation-in-Salome-for-Composite-and-Porous-Materials/assets/89903493/46d7e43f-47a0-43fa-a7c5-115db6cfb65f)
+
+Both scripts may be adapted to your needs, the possibilites are nearly endless. If you have the computing possibilities, you can also use the to make 'real' parts with particles, you just have to adapt the box-parameters to your needs and subtract the particles or pores from your real part.
 
 emefff@gmx.at
