@@ -1,6 +1,7 @@
 # Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials
 Python scripting in Salome allows us to automatically generate random particles or pores. With subsequent operations we are able to build composite or porous bodies for study in Code_Aster.
 
+__________________________________________________________________________
 **Composite Materials**
 
 Composite (e.g. metal matrix composites) and porous materials (e.g. metallic foams) are studied by generating a suitable geometries in .step format which are subsequently meshed in netgen or gmsh. Generating random particles by hand in geometry is a tedious task, that, very often, leads to particle distributions, that are not random. 
@@ -22,5 +23,18 @@ When doing this we really have to watch the mesh size. Remember, we only have 20
 For this simple demonstration we only apply a step-wise displacement in -x on the surface on the right-hand side. From solid mechanics we know that edgy particles lead to very high maximum stresses (if in tension, delamination may occur), this can easily be followed by looking at Von Mises stresses:
 
 ![VMIS_1](https://github.com/emefff/Mesh-Generation-In-Salome-For-Composite-And-Porous-Materials/assets/89903493/28f9ac2d-8cfa-489a-8ad2-60c1dba78156)
+
+__________________________________________________________________________
+**Porous Materials**
+
+Our second script generates random spheres in a box. Whith we can easily create a porous material by subtracting the spheres from the box. It results in a cheese-like body like this:
+
+![Bildschirmfoto vom 2023-12-19 09-02-37](https://github.com/emefff/Mesh-Generation-in-Salome-for-Composite-and-Porous-Materials/assets/89903493/9f3bd01a-64d4-491c-9d34-9a4416e21767)
+
+Again, we mesh it with netgen. Above said also holds: the mesh size can easily get out of hand size-wise:
+
+![Bildschirmfoto vom 2023-12-19 09-03-59](https://github.com/emefff/Mesh-Generation-in-Salome-for-Composite-and-Porous-Materials/assets/89903493/fe54cf62-d970-4be6-a0db-594550ccd9f0)
+
+
 
 emefff@gmx.at
