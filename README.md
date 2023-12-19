@@ -39,6 +39,6 @@ The load case is the same for this geometry, we look at the Von Mises stresses o
 
 ![VMIS_DEPLx1](https://github.com/emefff/Mesh-Generation-in-Salome-for-Composite-and-Porous-Materials/assets/89903493/46d7e43f-47a0-43fa-a7c5-115db6cfb65f)
 
-Both scripts may be adapted to your needs, the possibilites are nearly endless. If you have the computing possibilities, you can also use the to make 'real' parts with particles, you just have to adapt the box-parameters to your needs and subtract the particles or pores from your real part.
+Both scripts may be adapted to your needs, the possibilites are nearly endless. If you have the computing possibilities, you can also use the to make 'real' parts with particles, just adapt the box-parameters to your needs and subtract the particles or pores from your real part.
 
 emefff@gmx.at
