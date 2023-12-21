@@ -27,7 +27,7 @@ For this simple demonstration we only apply a step-wise displacement in -x on th
 __________________________________________________________________________
 **Porous Materials**
 
-Our second script generates random spheres in a box. Whith we can easily create a porous material by subtracting the spheres from the box. It results in a cheese-like body like this:
+Our second script generates random spheres in a box. A porous material is easily created by subtracting the spheres from the box. It results in a cheese-like body like this:
 
 ![Bildschirmfoto vom 2023-12-19 09-02-37](https://github.com/emefff/Mesh-Generation-in-Salome-for-Composite-and-Porous-Materials/assets/89903493/9f3bd01a-64d4-491c-9d34-9a4416e21767)
 
